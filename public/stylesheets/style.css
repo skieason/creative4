@@ -1,0 +1,24 @@
+#banner {
+	font-size: 50px;
+	text-shadow: 2px 2px rgb(74, 75, 76);
+	height: 80px;
+	background-color: white;
+	color: black;
+	margin: 0px;
+}
+
+.hint {
+	font-size: 12px;
+	opacity: .5;
+}
+
+#ncaapic {
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+					transition:         transform .8s ease-in-out;
+}
+
+#ncaapic:hover {
+	cursor: pointer;
+	-webkit-transform: rotate(360deg);
+					transform: rotate(360deg);
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Creative 4</title>
+	<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+	<script src="javascripts/app.js"></script>
+</head>
+
+<body ng-app="Creative4" ng-controller="MainCtrl">
+	<h1 id="banner" layout="row" layout-align="center center">Vacation Decision Helper!</h1>
+
+	<div layout="row" layout-align="center center">
+		<p>Search Two Different Locations<em>Compare two places at once!</em></p>
+	</div>
+
+
+	<div layout="row" layout-align="space-around center">
+		<div flex="75" layout="row" layout-align="space-between center">
+			<md-input-container flex="40" md-no-float class="md-block">
+				<input ng-model="winner" placeholder="Location #1">
+			</md-input-container>
+			<md-input-container flex="40" md-no-float class="md-block">
+				<input ng-model="loser" placeholder="Location #2">
+			</md-input-container>
+		</div>
+		<div layout="column" layout-align="center center">
+			<img ng-click="getImages()" id="ncaapic" src="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-image-128.png"
+				alt="NCAA" width="75" />
+			<span ng-show="showHint" class="hint">HINT: CLICK ME!</span>
+		</div>
+	</div>
+
+	<div layout="row" class="test">
+		<div layout="row" layout-wrap flex="50">
+			<md-card flex="45" ng-repeat="winner in winners">
+				<img ng-src="{{winner.display_sizes[0].uri}}" class="md-card-image" alt="Washed Out">
+				<md-card-content flex>
+					<p>{{winner.title}}</p>
+				</md-card-content>
+			</md-card>
+		</div>
+		<div layout="row" layout-wrap flex="50">
+			<md-card flex="45" ng-repeat="loser in losers">
+				<img ng-src="{{loser.display_sizes[0].uri}}" class="md-card-image" alt="Washed Out">
+				<md-card-content flex>
+					<p>{{loser.title}}</p>
+				</md-card-content>
+			</md-card>
+		</div>
+	</div>
+</body>
+
+</html>
